@@ -1,12 +1,16 @@
 import numpy as np
 import matplotlib.pyplot as plt
+
 def split(word):
     return [char for char in word]
 x=input("")
-count = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+
+count = [0 for y in range(26)]
 
 x = split(x)
+
 print(x)
+
 for i in range(len(x)):
     count[ord(x[i])-97] += 1
 
@@ -15,11 +19,11 @@ y=len(x)
 print(y)
 
 
-top=[('a',1.875),('c',1.125),('d',0.5),('e',0.5),('f',0.5),('g',0.5),('h',0.5),('i',0.5),('j',0.5),('k',0.5),('l',0.5),('m',0.5),('n',0.5),('o',0.5),('p',0.5),('q',0.5),('r',0.5),('s',0.5),('t',0.5),('u',0.5),('v',0.5),('w',0.5),('x',0.5),('y',0.5),('z',0.5)]
+top=[('a',count[0]),('b',count[1]),('c',count[2]),('d',count[3]),('e',count[4]),('f',count[5]),('g',count[6]),('h',count[7]),('i',count[8]),('j',count[9]),('k',count[10]),('l',count[11]),('m',count[12]),('n',count[13]),('o',count[14]),('p',count[15]),('q',count[16]),('r',count[17]),('s',count[18]),('t',count[19]),('u',count[20]),('v',count[21]),('w',count[22]),('x',count[23]),('y',count[24]),('z',count[25])]
 
 labels, ys = zip(*top)
 xs = np.arange(len(labels)) 
-width = 1
+width = 0.8
 
 fig = plt.figure()                                                               
 ax = fig.gca()
